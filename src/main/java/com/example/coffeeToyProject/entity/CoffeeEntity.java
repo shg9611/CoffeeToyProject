@@ -27,4 +27,22 @@ public class CoffeeEntity {
     @Column
     private String price;
 
+    @Override
+    public String toString() {
+        return "CoffeeEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price='" + price + '\'' +
+                '}';
+    }
+
+    public void patch(CoffeeEntity entity){
+        if (entity.getName()!=null){
+            this.name=entity.getName();
+        }
+
+        if(entity.getPrice()!=null){
+            this.price=entity.getPrice();
+        }
+    }
 }
